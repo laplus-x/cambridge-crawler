@@ -13,6 +13,11 @@ import type {
 import { DatasetType, LanguageType, PronType } from "@/types";
 
 /**
+ * Export all constants
+ */
+export * from "@/types/constant";
+
+/**
  * Configuration options for the Cambridge dictionary crawler.
  */
 interface Options {
