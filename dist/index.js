@@ -19,7 +19,14 @@ var r = (e) => {
 }, o = {
 	UK: "uk",
 	US: "us"
-}, s = class {
+}, s = { ZhTw: "zht" }, c = {
+	En: "english",
+	EnZhCh: "english-chinese-simplified",
+	EnZhTw: "english-chinese-traditional"
+}, l = {
+	UK: "uk",
+	US: "us"
+}, u = class {
 	base = "https://dictionary.cambridge.org";
 	lang;
 	dataset;
@@ -165,6 +172,6 @@ var r = (e) => {
 	}
 };
 //#endregion
-export { s as Cambridge };
+export { u as Cambridge, c as DatasetType, s as LanguageType, l as PronType };
 
 //# sourceMappingURL=index.js.map

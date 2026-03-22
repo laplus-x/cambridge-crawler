@@ -150,7 +150,7 @@ export declare class Cambridge {
 }
 
 /** 字典 */
-declare const DatasetType: {
+export declare const DatasetType: {
     /** 英英 */
     readonly En: "english";
     /** 英中 */
@@ -158,15 +158,15 @@ declare const DatasetType: {
     readonly EnZhTw: "english-chinese-traditional";
 };
 
-declare type DatasetType = (typeof DatasetType)[keyof typeof DatasetType];
+export declare type DatasetType = (typeof DatasetType)[keyof typeof DatasetType];
 
 /** 語系 */
-declare const LanguageType: {
+export declare const LanguageType: {
     /** 繁體中文 */
     readonly ZhTw: "zht";
 };
 
-declare type LanguageType = (typeof LanguageType)[keyof typeof LanguageType];
+export declare type LanguageType = (typeof LanguageType)[keyof typeof LanguageType];
 
 /**
  * Configuration options for the Cambridge dictionary crawler.
@@ -198,12 +198,12 @@ declare interface PronData {
     audio: string;
 }
 
-declare const PronType: {
+export declare const PronType: {
     UK: string;
     US: string;
 };
 
-declare type PronType = (typeof PronType)[keyof typeof PronType];
+export declare type PronType = (typeof PronType)[keyof typeof PronType];
 
 declare interface SearchData {
     title: string;
