@@ -15,13 +15,12 @@
 		}
 	},
 	"scripts": {
-		"prepare": "ts-patch install",
+		"prepare": "ts-patch install && bun run build",
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"check": "biome check --write",
-		"release": "commit-and-tag-version",
-		"postinstall": "bun run build"
+		"release": "commit-and-tag-version"
 	},
 	"dependencies": {
 		"cheerio": "^1.2.0",
