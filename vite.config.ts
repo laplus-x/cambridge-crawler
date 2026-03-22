@@ -36,7 +36,7 @@ export default defineConfig(({ mode }) => {
 				fileName: "index",
 			},
 			rollupOptions: {
-				external: ["ts-results"],
+				external: ["ts-results", "cheerio"],
 			},
 		},
 	};
