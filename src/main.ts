@@ -297,7 +297,10 @@ export class Cambridge {
 	 * }
 	 * ```
 	 */
-	public async autocomplete(params: AutocompleteParameter) {
+	public async autocomplete(
+		params: AutocompleteParameter,
+		options?: RequestInit,
+	) {
 		const valid = validate<AutocompleteParameter>(params);
 		if (!valid.success) {
 			const err = new Error(`[Typia] ${valid.errors.at(0)?.description}`, {
@@ -309,7 +312,7 @@ export class Cambridge {
 		const { query } = params;
 		const sp = new URLSearchParams({ dataset: this.dataset, q: query });
 		const url = `${this.base}/${this.lang}/autocomplete/amp?${sp.toString()}`;
-		const result = await this.request<WordData[]>(url);
+		const result = await this.request<WordData[]>(url, options);
 		return result;
 	}
 
@@ -338,7 +341,7 @@ export class Cambridge {
 	 * }
 	 * ```
 	 */
-	public async search(params: SearchParameter) {
+	public async search(params: SearchParameter, options?: RequestInit) {
 		const valid = validate<SearchParameter>(params);
 		if (!valid.success) {
 			const err = new Error(`[Typia] ${valid.errors.at(0)?.description}`, {
@@ -349,7 +352,7 @@ export class Cambridge {
 
 		const { query } = params;
 		const url = `${this.base}/dictionary/${this.dataset}/${query}`;
-		const result = await this.request<string>(url);
+		const result = await this.request<string>(url, options);
 		return result.map((i) => this.parse(i));
 	}
 }
