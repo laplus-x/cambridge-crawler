@@ -120,7 +120,7 @@ export declare class Cambridge {
      * }
      * ```
      */
-    autocomplete(params: AutocompleteParameter): Promise<Err<unknown> | Ok<WordData[]>>;
+    autocomplete(params: AutocompleteParameter, options?: RequestInit): Promise<Err<unknown> | Ok<WordData[]>>;
     /**
      * Searches for detailed word information in the Cambridge Dictionary.
      *
@@ -146,7 +146,7 @@ export declare class Cambridge {
      * }
      * ```
      */
-    search(params: SearchParameter): Promise<Err<unknown> | Ok<SearchData>>;
+    search(params: SearchParameter, options?: RequestInit): Promise<Err<unknown> | Ok<SearchData>>;
 }
 
 /** 字典 */

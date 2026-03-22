@@ -91,8 +91,8 @@ var r = (e) => {
 			pos: c
 		};
 	}
-	async autocomplete(e) {
-		let n = (() => {
+	async autocomplete(e, n) {
+		let i = (() => {
 			let e = (e) => typeof e.query == "string", t = (e, t, n = !0) => [typeof e.query == "string" || a(n, {
 				path: t + ".query",
 				expected: "string",
@@ -125,15 +125,15 @@ var r = (e) => {
 				};
 			};
 		})()(e);
-		if (!n.success) return t(Error(`[Typia] ${n.errors.at(0)?.description}`, { cause: n.errors.at(0) }));
-		let { query: i } = e, a = new URLSearchParams({
+		if (!i.success) return t(Error(`[Typia] ${i.errors.at(0)?.description}`, { cause: i.errors.at(0) }));
+		let { query: a } = e, o = new URLSearchParams({
 			dataset: this.dataset,
-			q: i
-		}), o = `${this.base}/${this.lang}/autocomplete/amp?${a.toString()}`;
-		return await this.request(o);
+			q: a
+		}), s = `${this.base}/${this.lang}/autocomplete/amp?${o.toString()}`;
+		return await this.request(s, n);
 	}
-	async search(e) {
-		let n = (() => {
+	async search(e, n) {
+		let i = (() => {
 			let e = (e) => typeof e.query == "string", t = (e, t, n = !0) => [typeof e.query == "string" || a(n, {
 				path: t + ".query",
 				expected: "string",
@@ -166,9 +166,9 @@ var r = (e) => {
 				};
 			};
 		})()(e);
-		if (!n.success) return t(Error(`[Typia] ${n.errors.at(0)?.description}`, { cause: n.errors.at(0) }));
-		let { query: i } = e, a = `${this.base}/dictionary/${this.dataset}/${i}`;
-		return (await this.request(a)).map((e) => this.parse(e));
+		if (!i.success) return t(Error(`[Typia] ${i.errors.at(0)?.description}`, { cause: i.errors.at(0) }));
+		let { query: a } = e, o = `${this.base}/dictionary/${this.dataset}/${a}`;
+		return (await this.request(o, n)).map((e) => this.parse(e));
 	}
 };
 //#endregion
