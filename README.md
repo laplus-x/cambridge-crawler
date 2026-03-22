@@ -22,6 +22,11 @@
 npm install cambridge-crawler
 ```
 
+```bash
+bun add github:laplus-x/cambridge-crawler
+bun install
+```
+
 ## 使用方法
 
 ### 基本設定

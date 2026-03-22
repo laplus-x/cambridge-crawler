@@ -20,7 +20,8 @@
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"check": "biome check --write",
-		"release": "commit-and-tag-version"
+		"release": "commit-and-tag-version",
+		"postinstall": "bun run build"
 	},
 	"dependencies": {
 		"cheerio": "^1.2.0",
